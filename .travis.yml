@@ -1,0 +1,4 @@
+language: csharp
+script:    # the following commands are just examples, use whatever your build process requires
+  - chmod a+x ./Build.sh
+  - chmod a+x ./Test.sh
