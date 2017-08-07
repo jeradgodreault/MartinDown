@@ -9,14 +9,14 @@ namespace Godreault.MartinDown
     {
         public string Transform(string input)
         {
-            if (input == null || input == "") return input;
-            if (input.Length == 1) return input;
+            if (input == null || input == "" || input.Length == 1) 
+            {
+                return input;
+            } 
 
             var output = new StringBuilder("");
             var tokens = Lexer.GetTokens(input);
 
-
-            var lastToken = tokens.Last();            
             foreach (Token token in tokens)
             {
                 output.Append((token.TokenType == TokenType.WORD) ? token.Content 
@@ -36,7 +36,7 @@ namespace Godreault.MartinDown
             return output.ToString();
         }
 
-        public class Lexer
+        public static class Lexer
         {
             public static IEnumerable<Token> GetTokens(string input)
             {
@@ -53,10 +53,6 @@ namespace Godreault.MartinDown
                     if (word.Length == 0 && i != splitInput.Length - 1)
                     {
                         tokens.Add(new Token(TokenType.SPACE));
-                    }
-                    else if (word.Length <= 2)
-                    {
-                        tokens.Add(new Token(TokenType.WORD, word));
                     }
                     //Determine if its italics. eg. *H*
                     else if (word.Length >= 3
