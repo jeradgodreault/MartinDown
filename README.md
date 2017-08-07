@@ -57,7 +57,7 @@ Contributions are absolutely welcome! The project is built as a .NET Core librar
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/jeradgodreault/MartinDown/tags). 
 
 ## Authors
-* **Jerad Godreault** - *Initial work* - [PurpleBooth](https://github.com/jeradgodreault)
+* [Jerad Godreault](https://github.com/jeradgodreault) - *Initial work* 
 
 See also the list of [contributors](https://github.com/jeradgodreault/MartinDown/contributors) who participated in this project.
 
