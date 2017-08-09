@@ -42,7 +42,7 @@ namespace Godreault.MartinDownTest
             var result = markdown.Transform("*Hello*");
 
             //assert
-            Assert.AreEqual("<i>Hello</i>", result);
+            Assert.AreEqual("<em>Hello</em>", result);
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace Godreault.MartinDownTest
             var result = markdown.Transform("**Hello**");
 
             //assert
-            Assert.AreEqual("<b>Hello</b>", result);
+            Assert.AreEqual("<strong>Hello</strong>", result);
         }
 
         [TestMethod]
@@ -68,7 +68,7 @@ namespace Godreault.MartinDownTest
             var result = markdown.Transform("***Hello***");
 
             //assert
-            Assert.AreEqual("<b><i>Hello</i></b>", result);
+            Assert.AreEqual("<strong><em>Hello</em></strong>", result);
         }
 
         [TestMethod]
@@ -94,7 +94,7 @@ namespace Godreault.MartinDownTest
             var result = markdown.Transform("The *quick* **brown** fox ***jumps*** over the lazy dog.");
 
             //assert
-            Assert.AreEqual("The <i>quick</i> <b>brown</b> fox <b><i>jumps</i></b> over the lazy dog.", result);
+            Assert.AreEqual("The <em>quick</em> <strong>brown</strong> fox <strong><em>jumps</em></strong> over the lazy dog.", result);
         }
 
         [TestMethod]

@@ -20,12 +20,12 @@ namespace Godreault.MartinDown
             foreach (Token token in tokens)
             {
                 output.Append((token.TokenType == TokenType.WORD) ? token.Content 
-                : (token.TokenType == TokenType.BOLD_START) ? "<b>"
-                : (token.TokenType == TokenType.BOLD_END) ? "</b>"
-                : (token.TokenType == TokenType.ITALIC_START) ? "<i>"
-                : (token.TokenType == TokenType.ITALIC_END) ? "</i>"
-                : (token.TokenType == TokenType.BOLDITALIC_START) ? "<b><i>"
-                : (token.TokenType == TokenType.BOLDITALIC_END) ? "</i></b>"
+                : (token.TokenType == TokenType.BOLD_START) ? "<strong>"
+                : (token.TokenType == TokenType.BOLD_END) ? "</strong>"
+                : (token.TokenType == TokenType.ITALIC_START) ? "<em>"
+                : (token.TokenType == TokenType.ITALIC_END) ? "</em>"
+                : (token.TokenType == TokenType.BOLDITALIC_START) ? "<strong><em>"
+                : (token.TokenType == TokenType.BOLDITALIC_END) ? "</em></strong>"
                 : (token.TokenType == TokenType.SPACE) ? " "
                 : (token.TokenType == TokenType.END_OF_LINE) ? ""
                 : token.Content
