@@ -1,13 +1,12 @@
 using System;
 
-namespace Godreault.MartinDown
+namespace Godreault.MartinDownSharp
 {
     public class Program
     {
-
        protected static void Main(string[] args) {
-            MarkDown markdown = new MarkDown();
-            Console.WriteLine(markdown.Transform("Hello World!"));
+            MartinDown martinDown = new MartinDown();
+            Console.WriteLine(martinDown.Transform("**Hello World!**"));
         }
     }
 }

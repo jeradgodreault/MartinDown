@@ -1,5 +1,6 @@
 # MartinDown
-A parser for a small subset of markdown.
+A MarkDown parser that only supports span elements.
+
 [![Build Status](https://travis-ci.org/jeradgodreault/MartinDown.svg?branch=master)](https://travis-ci.org/jeradgodreault/MartinDown) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/65b285d413df427fba383484554961c7)](https://www.codacy.com/app/jeradgodreault/MartinDown?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jeradgodreault/MartinDown&amp;utm_campaign=Badge_Grade)
 
 ## Getting Started
@@ -28,8 +29,8 @@ namespace Godreault.MartinDown
     {
         static void Main(string[] args) 
         {
-            MarkDown markdown = new MarkDown();
-            Console.WriteLine(markdown.Transform("Hello World!"));
+            MartinDown martinDown = new MartinDown();
+            Console.WriteLine(martinDown.Transform("**Hello World!**"));
         }
     }
 }

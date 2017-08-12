@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Godreault.MartinDown;
+using Godreault.MartinDownSharp;
 
 namespace Godreault.MartinDownTest
 {
@@ -10,7 +10,7 @@ namespace Godreault.MartinDownTest
         public void WhenInputHasNoMarkDown_ExpectSameOutput()
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("Hello World!");
@@ -23,7 +23,7 @@ namespace Godreault.MartinDownTest
         public void WhenInputIsEmpty_ExpectEmptyOutput() 
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform(string.Empty);
@@ -36,7 +36,7 @@ namespace Godreault.MartinDownTest
         public void WhenSingleWordHasItalic_ExpectCorrectHtmlTagOutput() 
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("*Hello*");
@@ -49,7 +49,7 @@ namespace Godreault.MartinDownTest
         public void WhenSingleWordHasBold_ExpectCorrectHtmlTagOutput() 
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("**Hello**");
@@ -62,7 +62,7 @@ namespace Godreault.MartinDownTest
         public void WhenSingleWordHasBoldAndItalics_ExpectCorrectHtmlTagOutput() 
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("***Hello***");
@@ -75,7 +75,7 @@ namespace Godreault.MartinDownTest
         public void WhenSentenceHasExtraWhiteSpaceBetweenWords_ExpectExtraWhiteSpace()
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("Hello  World   !");
@@ -88,7 +88,7 @@ namespace Godreault.MartinDownTest
         public void When1LineSentenceContainsMultipleMarkup_ExpectEachWordWithRightTags()
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("The *quick* **brown** fox ***jumps*** over the lazy dog.");
@@ -101,7 +101,7 @@ namespace Godreault.MartinDownTest
         public void When1LineSentenceContainsMultipleSpacesBetweenWord_ExpectSameOutput() 
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("The  quick    brown   fox    jumps    over the lazy dog.");
@@ -114,7 +114,7 @@ namespace Godreault.MartinDownTest
         public void When1LineSentenceContainsTrailingSpaces_ExpectSpacePreserved() 
         {
             //arrange
-            MarkDown markdown = new MarkDown();
+            MartinDown markdown = new MartinDown();
             
             //act
             var result = markdown.Transform("The quick brown fox jumps over the lazy dog.      ");
